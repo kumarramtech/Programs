@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package = "com.sym.hibernate.mapping.set">
+ 	
+ 	<class name = "Employee" table="employee">
+ 	
+ 		<id name = "employeeid" column="employee_id">
+ 		<generator class="native"/>
+ 		</id>
+ 	
+ 		<property name="firstName" column="firstname"></property>
+ 		<property name="lastName" column="lastname" ></property>
+ 		<property name="birthdate" column="birth_date"></property>
+ 		<property name="cellPhone" column="cell_phone"></property>
+ 		
+ 		<many-to-one name="department" class="com.sym.hibernate.mapping.set.Department">
+ 			<column name="department_id" not-null="true"/>
+ 		</many-to-one>	
+ 	
+ 	</class>
+ 
+ </hibernate-mapping>
